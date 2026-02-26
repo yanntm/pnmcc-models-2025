@@ -23,7 +23,7 @@ while (my $line = <STDIN>) {
 
   # Names of LTL formulas are now patched outside of this script
   #if ($examination =~ /LTL.*/) {
-  #	# in 2023 no examination in these formulas
+  #	# in 2025 no examination in these formulas
   #	$prefix = $modelname ;
   #}
   @fields[2] =~ s/[\(\)]//g;
@@ -57,17 +57,17 @@ while (my $line = <STDIN>) {
 		  $res =~ s/(\d)\.0000E\+0005/${1}00000/g ;
 		  if ($globalProperties{$examination}) {
 			# GlobalProperties cases : formula name is simply examination
-		  	print OUT "FORMULA ".$examination." ".$res." TECHNIQUES ORACLE2023\n";
+		  	print OUT "FORMULA ".$examination." ".$res." TECHNIQUES ORACLE2025\n";
 			print CSV  @fields[0].",".@fields[1].",0,".$res."\n";
 		  } else {
 			  if ($#verdicts != 0) {
 			  	  # ordinary case : 16 formulas
-				  print OUT "FORMULA ".$prefix."-".@index[$i]." ".$res." TECHNIQUES ORACLE2023\n";
+				  print OUT "FORMULA ".$prefix."-".@index[$i]." ".$res." TECHNIQUES ORACLE2025\n";
 				  print CSV  @fields[0].",".@fields[1].",".@index[$i].",".$res."\n";
 			  } else {
-			  	# total failure of all tools in 2023, simulate question mark answer
+			  	# total failure of all tools in 2025, simulate question mark answer
 			  	foreach (@index) {
-				  	print OUT "FORMULA ".$prefix."-".$_." "."?"." TECHNIQUES ORACLE2023\n";
+				  	print OUT "FORMULA ".$prefix."-".$_." "."?"." TECHNIQUES ORACLE2025\n";
 					print CSV  @fields[0].",".@fields[1].",".$_.",".$res."\n";
 			  	}
 			  }		  	

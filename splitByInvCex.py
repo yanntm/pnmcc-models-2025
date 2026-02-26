@@ -5,10 +5,10 @@ import glob
 import argparse
 
 # How to use this script :
-# Grab the resolution file, e.g. like this : wget https://github.com/yanntm/MCC-analysis/raw/gh-pages/2023/reachability/resolution.csv
+# Grab the resolution file, e.g. like this : wget https://github.com/yanntm/MCC-analysis/raw/gh-pages/2025/reachability/resolution.csv
 # unzip all the models in INPUTS folder, maybe like this : find INPUTS/ -name '*.tgz' -print0 | xargs -0 -I {} tar -xzvf {} -C INPUTS/
 # unzip the oracle.tgz file
-# invoke this script : pnmcc-models-2023$ python splitByInvCex.py -classification ./resolution.csv -inputs website/INPUTS/ -oracles website/oracle/
+# invoke this script : pnmcc-models-2025$ python splitByInvCex.py -classification ./resolution.csv -inputs website/INPUTS/ -oracles website/oracle/
 
 # you obtain oracle files and property files suffixed with .INV. .CEX. or .UNK. that partition the properties of the MCC.
 
