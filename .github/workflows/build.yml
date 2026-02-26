@@ -1,5 +1,8 @@
 name: Automated build of website
 
+permissions:
+  contents: write
+
 on: 
  push:
    branches: [ master ]
