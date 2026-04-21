@@ -23,7 +23,7 @@ while (my $line = <STDIN>) {
 
   # Names of LTL formulas are now patched outside of this script
   #if ($examination =~ /LTL.*/) {
-  #	# in 2025 no examination in these formulas
+  #	# in 2023 no examination in these formulas
   #	$prefix = $modelname ;
   #}
   @fields[2] =~ s/[\(\)]//g;
@@ -55,6 +55,7 @@ while (my $line = <STDIN>) {
 		  $res =~ s/F/FALSE/g;
 		  $res =~ s/T/TRUE/g;
 		  $res =~ s/(\d)\.0000E\+0005/${1}00000/g ;
+		  $res =~ s/(?<!\+)inf/+inf/g ;
 		  if ($globalProperties{$examination}) {
 			# GlobalProperties cases : formula name is simply examination
 		  	print OUT "FORMULA ".$examination." ".$res." TECHNIQUES ORACLE2025\n";
