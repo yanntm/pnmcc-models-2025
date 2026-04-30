@@ -49,7 +49,17 @@ cat raw-result-analysis.csv | grep UpperBound | cut -d ',' -f2,3,16 | sort | uni
 
  
 # Patching bad consensus
-# None detected in 2025 so far.
+
+# Some issues on UpperBounds : ITS tools sole answers were incorrect in these cases.
+# Issue linked to coverability/infinite systems, so did not occur too often thankfully.
+
+sed -i -e "s/BugTracking-PT-q3m002-UpperBounds-12 1/BugTracking-PT-q3m002-UpperBounds-12 +inf/" BugTracking-PT-q3m002-UB.out
+sed -i -e "s/BugTracking-PT-q3m064-UpperBounds-05 1/BugTracking-PT-q3m064-UpperBounds-05 +inf/" BugTracking-PT-q3m064-UB.out
+sed -i -e "s/BugTracking-PT-q8m016-UpperBounds-10 1/BugTracking-PT-q8m016-UpperBounds-10 +inf/" BugTracking-PT-q8m016-UB.out
+sed -i -e "s/Medical-PT-06-UpperBounds-07 1/Medical-PT-06-UpperBounds-07 +inf/" Medical-PT-06-UB.out
+sed -i -e "s/Medical-PT-18-UpperBounds-06 1/Medical-PT-18-UpperBounds-06 +inf/" Medical-PT-18-UB.out
+
+
 
 #sed -i -e "s/CryptoMiner-COL-D03N000-UpperBounds-11 0/CryptoMiner-COL-D03N000-UpperBounds-11 +inf/" CryptoMiner-COL-D03N000-UB.out
 #sed -i -e "s/PolyORBLF-PT-S02J06T10-UpperBounds-13 9/PolyORBLF-PT-S02J06T10-UpperBounds-13 2/" PolyORBLF-PT-S02J06T10-UB.out
